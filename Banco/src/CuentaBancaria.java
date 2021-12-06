@@ -54,9 +54,14 @@ public class CuentaBancaria {
                 depositar(cantidad);
 
             } else if (opcionElegida.equalsIgnoreCase("C")) {
-                System.out.println("Ingrese la cantidad a retirar: ");
-                cantidad= Double.parseDouble(scanner.next());
-                retirar(cantidad);
+                if (saldo==0) {
+                    System.out.println("Usted no tiene dinero en su cuenta");
+                } else {
+                    System.out.println("Ingrese la cantidad a retirar: ");
+                    cantidad= Double.parseDouble(scanner.next());
+                    retirar(cantidad);
+                }
+
             } else if (opcionElegida.equalsIgnoreCase("D")) {
                 consultarUltimoMovimiento();
 
